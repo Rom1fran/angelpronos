@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Pronos - La lumière dans vos paris sportifs</title>
+    <meta name="description" content="Conseils premium, analyses pointues et alertes live pour vos paris sportifs. Rejoignez Angel Pronos et transformez vos performances.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAhNhprE87kkwUQj2QCowk9TyQceyYNk4cp83FKDi_bjBk3zhIRp2J4OLRezI-aAlCPpLu7htk-pU3Kpo&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'angel-black': '#0b0b0b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom styles for halo effect and smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .halo-effect {
+            position: relative;
+        }
+        
+        .halo-effect::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-angel-black text-white font-montserrat">
+    
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 bg-angel-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="ANGEL PRONOS.jpg" alt="Angel Pronos" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#accueil" class="text-white hover:text-sky-400 transition-colors duration-300">Accueil</a>
+                <a href="#abonnements" class="text-white hover:text-sky-400 transition-colors duration-300">Abonnements</a>
+                <a href="#apropos" class="text-white hover:text-sky-400 transition-colors duration-300">À propos</a>
+                <a href="#contact" class="text-white hover:text-sky-400 transition-colors duration-300">Contact</a>
+                <a href="#abonnements" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105">
+                    S'abonner
+                </a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-angel-black border-l border-gray-800 p-6 md:hidden">
+            <div class="flex justify-between items-center mb-8">
+                <img src="ANGEL PRONOS.jpg" alt="Angel Pronos" class="h-10 w-auto">
+                <button id="close-menu" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6">
+                <a href="#accueil" class="text-white hover:text-sky-400 transition-colors duration-300 text-lg">Accueil</a>
+                <a href="#abonnements" class="text-white hover:text-sky-400 transition-colors duration-300 text-lg">Abonnements</a>
+                <a href="#apropos" class="text-white hover:text-sky-400 transition-colors duration-300 text-lg">À propos</a>
+                <a href="#contact" class="text-white hover:text-sky-400 transition-colors duration-300 text-lg">Contact</a>
+                <a href="#abonnements" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-all duration-300 text-center mt-4">
+                    S'abonner
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Logo with halo effect -->
+            <div class="halo-effect mb-8">
+                <img src="ANGEL PRONOS.jpg" alt="Angel Pronos" class="mx-auto h-32 md:h-40 w-auto drop-shadow-2xl">
+            </div>
+            
+            <!-- Main heading -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Angel Pronos – <span class="text-sky-400">La lumière</span> dans vos paris sportifs.
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Conseils premium, analyses pointues et alertes live. Place à la clarté, à la confiance et à la performance.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#abonnements" class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+                    Découvrir nos abonnements
+                </a>
+                <a href="#contact" class="border-2 border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105">
+                    Nous contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABONNEMENTS SECTION -->
+    <section id="abonnements" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Nos Abonnements</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Choisissez l'offre qui correspond à vos besoins et transformez vos paris sportifs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Halo Classique -->
+                <div class="bg-angel-black border border-gray-800 rounded-2xl p-8 hover:scale-105 transition-all duration-300 hover:border-sky-400/50">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">✨</div>
+                        <h3 class="text-2xl font-bold mb-2">Halo Classique</h3>
+                        <div class="text-3xl font-bold text-sky-400 mb-2">40 € / mois</div>
+                        <p class="text-gray-400">Parfait pour débuter</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Conseils quotidiens
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Indice de fiabilité
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Analyse approfondie
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Sans engagement
+                        </li>
+                    </ul>
+                    
+                    <button id="subscribe-halo" class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+                        S'abonner
+                    </button>
+                </div>
+                
+                <!-- Aurora - Popular -->
+                <div class="bg-angel-black border-2 border-sky-400 rounded-2xl p-8 hover:scale-105 transition-all duration-300 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-sky-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Populaire</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🌅</div>
+                        <h3 class="text-2xl font-bold mb-2">Aurora</h3>
+                        <div class="text-3xl font-bold text-sky-400 mb-2">60 € / 2 mois</div>
+                        <p class="text-gray-400">Accompagnement renforcé</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Même contenu que Halo
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Accompagnement renforcé
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Sur 2 mois
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Tarif : sur devis / à définir
+                        </li>
+                    </ul>
+                    
+                    <button id="subscribe-aurora" class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+                        S'abonner
+                    </button>
+                </div>
+                
+                <!-- Archangel -->
+                <div class="bg-angel-black border border-gray-800 rounded-2xl p-8 hover:scale-105 transition-all duration-300 hover:border-sky-400/50">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">👼</div>
+                        <h3 class="text-2xl font-bold mb-2">Archangel</h3>
+                        <div class="text-3xl font-bold text-sky-400 mb-2">50 € / mois</div>
+                        <p class="text-gray-400">Pour les experts</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Alertes en direct
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Infos de dernière minute
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Recherche approfondie en live
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-sky-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Accès prioritaire
+                        </li>
+                    </ul>
+                    
+                    <button id="subscribe-archangel" class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+                        S'abonner
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À PROPOS SECTION -->
+    <section id="apropos" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">À Propos</h2>
+                    <div class="w-24 h-1 bg-sky-400 mx-auto"></div>
+                </div>
+                
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <div class="text-center mb-8">
+                        <img src="ANGEL PRONOS.jpg" alt="Angel Pronos" class="h-16 w-auto mx-auto opacity-20">
+                    </div>
+                    
+                    <div class="space-y-6 text-lg leading-relaxed text-justify">
+                        <h3 class="text-2xl font-bold text-sky-400 mb-4 text-center">Angel Pronos – La lumière dans vos paris sportifs</h3>
+                        
+                        <p class="text-justify">
+                            Dans un univers où le hasard brouille les pistes, Angel Pronos est né d'une conviction simple : donner aux passionnés une boussole fiable et transformer l'intuition en décision éclairée. Chez nous, chaque recommandation s'appuie sur une <span class="text-sky-400 font-semibold">analyse approfondie</span>, un <span class="text-sky-400 font-semibold">indice de fiabilité</span> et une stratégie pensée pour le long terme.
+                        </p>
+                        
+                        <p class="text-justify">
+                            Angel Pronos, ce n'est pas qu'un site : c'est une <span class="text-sky-400 font-semibold">communauté de parieurs éclairés</span>. Que vous choisissiez le <span class="text-sky-400 font-semibold">Halo Classique</span>, l'<span class="text-sky-400 font-semibold">Aurora</span> ou l'<span class="text-sky-400 font-semibold">Archangel</span>, vous bénéficiez d'un accompagnement sérieux, transparent et orienté résultats.
+                        </p>
+                        
+                        <p class="text-xl font-semibold text-sky-400 text-center">
+                            Avec Angel Pronos, vous ne jouez plus seul : vous avancez guidé par une <span class="text-white">lumière qui brille au-dessus de vos paris</span>. <span class="text-white">Rejoignez-nous et faites passer vos performances au niveau supérieur.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Contact</h2>
+                    <p class="text-xl text-gray-300">Une question ? Un projet ? N'hésitez pas à nous écrire</p>
+                </div>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label for="nom" class="block text-sm font-medium text-gray-300 mb-2">Nom complet</label>
+                        <input type="text" id="nom" name="nom" required 
+                               class="w-full px-4 py-3 bg-angel-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300"
+                               placeholder="Votre nom">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 bg-angel-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300"
+                               placeholder="votre@email.com">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                  class="w-full px-4 py-3 bg-angel-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300 resize-none"
+                                  placeholder="Votre message..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-sky-500 hover:bg-sky-600 text-white py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+                        Envoyer
+                    </button>
+                </form>
+                
+                <div class="mt-12 text-center space-y-4">
+                    <p class="text-gray-300">Suivez-nous sur Instagram :</p>
+                    <div class="space-y-2">
+                        <a href="https://instagram.com/angel_pronos_france" target="_blank" class="text-sky-400 hover:text-sky-300 transition-colors duration-300 block text-lg font-semibold">
+                            @angel_pronos_france
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-angel-black border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Logo -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="ANGEL PRONOS.jpg" alt="Angel Pronos" class="h-12 w-auto">
+                </div>
+                
+                <!-- Quick Links -->
+                <nav class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#accueil" class="text-gray-400 hover:text-sky-400 transition-colors duration-300">Accueil</a>
+                    <a href="#abonnements" class="text-gray-400 hover:text-sky-400 transition-colors duration-300">Abonnements</a>
+                    <a href="#apropos" class="text-gray-400 hover:text-sky-400 transition-colors duration-300">À propos</a>
+                    <a href="#contact" class="text-gray-400 hover:text-sky-400 transition-colors duration-300">Contact</a>
+                </nav>
+                
+                <!-- Legal -->
+                <div class="text-center md:text-right text-xs text-gray-500">
+                    <p>&copy; 2024 Angel Pronos</p>
+                    <p>Mentions légales</p>
+                    <p>CGV</p>
+                </div>
+            </div>
+            
+            <!-- Legal Warning -->
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-xs text-gray-500 max-w-4xl mx-auto">
+                    <strong>Avertissement légal :</strong> Les paris sportifs comportent des risques de perte en capital. Interdit aux mineurs. Jouez responsable. 
+                    Angel Pronos ne garantit aucun gain et ne peut être tenu responsable des pertes financières.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on links
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission (basic validation)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Basic form validation
+                const nom = document.getElementById('nom').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (nom && email && message) {
+                    alert('Message envoyé ! Nous vous répondrons dans les plus brefs délais.');
+                    form.reset();
+                } else {
+                    alert('Veuillez remplir tous les champs obligatoires.');
+                }
+            });
+        }
+    </script>
+
+    <!-- PayPal Modal Script -->
+    <script>
+    (() => {
+      // 1) Associe chaque formule à son Hosted Button ID PayPal
+      const PAYPAL_BUTTON_IDS = {
+        halo: "CB5M75R946NJE",       // 40€ / mois (ton ID existant)
+        aurora: "AX954BBVVBT5W",     // 60€ / 2 mois (ID PayPal pour Aurora)
+        archangel: "MUJ5SSRTWV7XC"   // 50€ / mois (ID PayPal pour Archangel)
+      };
+
+      // 2) Helpers
+      const planTitle = (plan) => ({
+        halo: "Halo Classique — 40 €/mois",
+        aurora: "Aurora — 60 € / 2 mois",
+        archangel: "Archangel — 50 €/mois"
+      }[plan] || "Abonnement");
+
+      function createModal(plan) {
+        // Supprime un modal précédent si présent
+        const existing = document.getElementById("paypal-modal");
+        if (existing) existing.remove();
+
+        // Wrapper modal
+        const wrap = document.createElement("div");
+        wrap.id = "paypal-modal";
+        wrap.className = "fixed inset-0 z-[9999] flex items-center justify-center";
+        wrap.innerHTML = `
+          <div class="absolute inset-0 bg-black/70" data-close></div>
+          <div class="relative w-full max-w-md rounded-2xl bg-neutral-900 p-6 text-white shadow-xl">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold">${planTitle(plan)}</h3>
+              <button class="text-white/70 hover:text-white" data-close aria-label="Fermer">✕</button>
+            </div>
+            <p class="mt-2 text-white/70">Paiement sécurisé via PayPal.</p>
+            <div id="paypal-container-${plan}" class="mt-6">
+              <div class="text-sm text-white/60" id="paypal-loader-${plan}">Chargement du bouton PayPal…</div>
+            </div>
+            <p class="mt-4 text-xs text-white/50">
+              Les paris comportent des risques. Interdit aux mineurs. Jouez responsable.
+            </p>
+          </div>`;
+        document.body.appendChild(wrap);
+
+        // Fermeture (overlay, X, ESC)
+        wrap.querySelectorAll("[data-close]").forEach(el => 
+          el.addEventListener("click", () => wrap.remove())
+        );
+        window.addEventListener("keydown", function onEsc(e){
+          if (e.key === "Escape") { wrap.remove(); window.removeEventListener("keydown", onEsc); }
+        });
+
+        return wrap;
+      }
+
+      // 3) Rendu Hosted Button PayPal pour un plan
+      const rendered = {}; // empêche re-rendu
+      function renderHostedButton(plan) {
+        const hostedId = PAYPAL_BUTTON_IDS[plan];
+        if (!hostedId || hostedId === "REPLACE_WITH_ID") {
+          const container = "#paypal-container-" + plan;
+          const loader = document.getElementById("paypal-loader-" + plan);
+          if (loader) {
+            loader.innerHTML = "❌ Bouton PayPal non configuré pour cette offre";
+            loader.className = "text-red-400 text-sm";
+          }
+          return;
+        }
+        const container = "#paypal-container-" + plan;
+        if (rendered[container]) return; // déjà rendu
+
+        // Vérification SDK
+        if (!window.paypal || !paypal.HostedButtons) {
+          const loader = document.getElementById("paypal-loader-" + plan);
+          if (loader) {
+            loader.innerHTML = "❌ PayPal SDK non chargé";
+            loader.className = "text-red-400 text-sm";
+          }
+          return;
+        }
+
+        // Timeout pour éviter l'attente infinie
+        const timeout = setTimeout(() => {
+          const loader = document.getElementById("paypal-loader-" + plan);
+          if (loader) {
+            loader.innerHTML = "⏱️ Chargement PayPal en cours...";
+            loader.className = "text-yellow-400 text-sm";
+          }
+        }, 3000);
+
+        paypal.HostedButtons({ hostedButtonId: hostedId })
+          .render(container)
+          .then(() => {
+            clearTimeout(timeout);
+            const loader = document.getElementById("paypal-loader-" + plan);
+            if (loader) loader.remove();
+          })
+          .catch((err) => {
+            clearTimeout(timeout);
+            console.error(err);
+            const loader = document.getElementById("paypal-loader-" + plan);
+            if (loader) {
+              loader.innerHTML = "❌ Erreur lors du chargement du bouton PayPal";
+              loader.className = "text-red-400 text-sm";
+            }
+          });
+
+        rendered[container] = true;
+      }
+
+      // 4) Ouverture du modal + rendu au clic
+      function handleSubscribeClick(plan) {
+        createModal(plan);
+        renderHostedButton(plan);
+      }
+
+      // 5) Brancher sur IDs explicites si présents
+      const byId = {
+        halo: document.getElementById("subscribe-halo"),
+        aurora: document.getElementById("subscribe-aurora"),
+        archangel: document.getElementById("subscribe-archangel")
+      };
+      Object.entries(byId).forEach(([plan, btn]) => {
+        if (btn) btn.addEventListener("click", () => handleSubscribeClick(plan));
+      });
+
+      // 6) Délégation: supporte aussi data-subscribe="halo|aurora|archangel"
+      document.addEventListener("click", (e) => {
+        const t = e.target.closest("[data-subscribe]");
+        if (!t) return;
+        const plan = t.getAttribute("data-subscribe");
+        if (!plan) return;
+        handleSubscribeClick(plan);
+      });
+    })();
+    </script>
+</body>
+</html>
